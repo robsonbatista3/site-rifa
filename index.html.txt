@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RifaFácil - Crie e Participe de Rifas Online</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: #333;
+      line-height: 1.6;
+      background-color: #f8f9fa;
+    }
+
+    header {
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      opacity: 0.9;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    nav {
+      background-color: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+
+    nav a:hover {
+      color: #6a11cb;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h2 {
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      color: #555;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #e91e63;
+      color: white;
+      padding: 15px 35px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      transition: 0.3s;
+      margin: 10px;
+    }
+
+    .btn:hover {
+      background: #c2185b;
+      transform: scale(1.05);
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin: 60px 0;
+    }
+
+    .feature {
+      flex: 1;
+      min-width: 280px;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .feature img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+    }
+
+    .feature h3 {
+      margin: 20px 0 10px;
+      color: #2c3e50;
+      font-size: 1.5rem;
+    }
+
+    .feature p {
+      color: #666;
+      font-size: 1.1rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 50px;
+      color: #2c3e50;
+    }
+
+    .ranking {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      margin: 60px 0;
+    }
+
+    .ranking h3 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #2c3e50;
+      font-size: 1.8rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table th, table td {
+      padding: 14px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+
+    table th {
+      background-color: #f0f0f0;
+      color: #333;
+      font-weight: 600;
+    }
+
+    table tr:hover {
+      background-color: #f9f9f9;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+      margin-top: 80px;
+    }
+
+    footer h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .social a {
+      color: white;
+      margin: 0 15px;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+
+    .footer-links {
+      margin: 20px 0;
+    }
+
+    .footer-links a {
+      color: #ddd;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .copyright {
+      opacity: 0.7;
+      font-size: 0.9rem;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      .hero h2 {
+        font-size: 2rem;
+      }
+      nav a {
+        font-size: 0.9rem;
+        margin: 0 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <h1>RifaFácil</h1>
+    <p>A maneira mais segura e moderna de criar e participar de rifas online com pagamento via Pix!</p>
+  </header>
+
+  <!-- Navegação -->
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#como-funciona">Como Funciona</a>
+    <a href="#criadores">Criadores</a>
+    <a href="#participantes">Participantes</a>
+    <a href="#ranking">Ranking</a>
+  </nav>
+
+  <!-- Seção Principal -->
+  <section id="inicio" class="hero">
+    <h2>Transforme suas rifas em experiências digitais</h2>
+    <p>Crie sua rifa em minutos, venda com Pix, acompanhe vendas em tempo real e sorteie com transparência total. Ideal para eventos, influenciadores e empreendedores.</p>
+    <a href="#criadores" class="btn">Criar Minha Rifa</a>
+    <a href="#participantes" class="btn" style="background:#2575fc;">Participar de Rifa</a>
+  </section>
+
+  <!-- Como Funciona -->
+  <section id="como-funciona" class="container">
+    <h2 class="section-title">Como Funciona</h2>
+    <div class="features">
+      <div class="feature">
+        <img src="https://img.icons8.com/color/96/000000/add-list.png" alt="Criar">
+        <h3>1. Crie sua Rifa</h3>
+        <p>Adicione o prêmio, defina o valor do número e a quantidade total. Envie uma foto do prêmio.</p>
+      </div>
+      <div class="feature">
+        <img src="https://img.icons8.com/color/96/000000/qr-code.png" alt="Pagar">
+        <h3>2. Compartilhe e Venda</h3>
+        <p>Gere um link único e compartilhe no WhatsApp, Instagram ou Facebook. Os compradores pagam com Pix.</p>
+      </div>
+      <div class="feature">
+        <img src="https://img.icons8.com/color/96/000000/trophy.png" alt="Sortear">
+        <h3>3. Sorteie com Transparência</h3>
+        <p>No fim do prazo, o sistema sorteia o ganhador automaticamente. Todos podem ver o resultado.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Para Criadores -->
+  <section id="criadores" class="container">
+    <h2 class="section-title">Para Criadores de Rifa</h2>
+    <p style="font-size:1.2rem; text-align:center; max-width:900px; margin:0 auto 30px;">
+      Tenha sua página personalizada com pagamento automático, ranking público e comprovantes com QR Code.
+    </p>
+    <ul style="font-size:1.1rem; margin:20px 0; padding-left:30px; line-height:2;">
+      <li>Pagamento via Pix com confirmação automática</li>
+      <li>Números bloqueados assim que comprados</li>
+      <li>Comprovantes em PDF com QR Code para validar</li>
+      <li>Ranking público: veja quem mais está apostando</li>
+      <li>Relatórios de vendas e lucro total</li>
+    </ul>
+    <div style="text-align:center; margin-top:40px;">
+      <a href="#" class="btn">Comece Agora →</a>
+    </div>
+  </section>
+
+  <!-- Para Participantes -->
+  <section id="participantes" class="container">
+    <h2 class="section-title">Para Participantes</h2>
+    <p style="font-size:1.2rem; text-align:center; max-width:900px; margin:0 auto 30px;">
+      Compre números com segurança e acompanhe tudo em tempo real.
+    </p>
+    <ul style="font-size:1.1rem; margin:20px 0; padding-left:30px; line-height:2;">
+      <li>Veja os números disponíveis e comprados</li>
+      <li>Pague com Pix em segundos</li>
+      <li>Baixe seu comprovante com QR Code</li>
+      <li>Acompanhe o ranking dos maiores compradores</li>
+      <li>Receba notificação se ganhar!</li>
+    </ul>
+  </section>
+
+  <!-- Ranking Público -->
+  <section id="ranking" class="container">
+    <div class="ranking">
+      <h3>🏆 Ranking dos Maiores Compradores (Exemplo)</h3>
+      <table>
+        <tr>
+          <th>Nome</th>
+          <th>Números Comprados</th>
+          <th>Valor Gasto</th>
+        </tr>
+        <tr>
+          <td>Carla Mendes</td>
+          <td>25</td>
+          <td>R$ 250,00</td>
+        </tr>
+        <tr>
+          <td>João Pedro</td>
+          <td>18</td>
+          <td>R$ 180,00</td>
+        </tr>
+        <tr>
+          <td>Ana Luiza</td>
+          <td>15</td>
+          <td>R$ 150,00</td>
+        </tr>
+        <tr>
+          <td>Felipe Costa</td>
+          <td>12</td>
+          <td>R$ 120,00</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <h3>RifaFácil</h3>
+    <p>Torne suas rifas digitais, justas e lucrativas.</p>
+    <div class="social">
+      <a href="#">📱 WhatsApp</a>
+      <a href="#">📸 Instagram</a>
+      <a href="#">📘 Facebook</a>
+    </div>
+    <div class="footer-links">
+      <a href="#">Termos de Uso</a>
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Suporte</a>
+    </div>
+    <p class="copyright">&copy; 2025 RifaFácil - Todos os direitos reservados</p>
+  </footer>
+
+</body>
+</html>
